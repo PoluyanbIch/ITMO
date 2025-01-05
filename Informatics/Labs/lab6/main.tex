@@ -1,0 +1,36 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[a4paper, left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{empheq,etoolbox}
+\usepackage{fancyhdr}
+\usepackage{graphicx, geometry}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{cases}
+\usepackage{float}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\usetikzlibrary{automata, positioning, arrows}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=1.9}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[R]{\textbf{\thepage}\phantom{fancypagenumber}}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{images/}}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+
+\begin{document}
+	\input{title.tex}
+	\input{page.tex}
+\end{document}

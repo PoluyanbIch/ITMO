@@ -1,0 +1,1 @@
+record Shot(boolean hit, String target, double distance) {}

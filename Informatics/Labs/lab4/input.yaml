@@ -1,0 +1,33 @@
+schedule:
+  monday:
+    lesson1:
+      time: 8:20-9:50
+      room: 2116
+      place: Кронверкский пр., д.49, лит. А
+      subject: Информатика
+    lesson2:
+      time: 10:00-11:30
+      room: 2116
+      place: Кронверкский пр., д.49, лит. А
+      subject: Информатика
+    lesson3:
+      time: 15:20-16:50
+      room: 1404
+      place: Кронверкский пр., д.49, лит. А
+      subject: Линейная алгебра
+    lesson4:
+      time: 17:00-18:30
+      room: 1404
+      place: Кронверкский пр., д.49, лит. А
+      subject: Линейная алгебра
+  thursday:
+    lesson1:
+      time: 8:20-9:50
+      room: 3113
+      place: ул.Ломоносова, д.9, лит. Е
+      subject: Английский язык
+    lesson2:
+      time: 10:00-11:30
+      room: 3113
+      place: ул.Ломоносова, д.9, лит. Е
+      subject: Английский язык
