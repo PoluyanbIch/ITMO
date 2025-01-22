@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Chapter 1 - dm_book</title>
+        <title>Аффинные подпространства. Свойства. - dm_book</title>
 
 
         <!-- Custom HTML head -->
@@ -154,58 +154,85 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="1-Делимость-Свойства-Теорема-о-делениии-с-остатком"><a class="header" href="#1-Делимость-Свойства-Теорема-о-делениии-с-остатком">1. Делимость. Свойства. Теорема о делениии с остатком</a></h1>
-<h2 id="Делимость"><a class="header" href="#Делимость">Делимость</a></h2>
-<h3 id="Определение"><a class="header" href="#Определение">Определение</a></h3>
-<blockquote>
-<p>Пусть $a, b \in \Z, b \not = 0$. Тогда <em>a</em> делится на <em>b</em> (обозначение: $a , \vdots , b$) или, что то же самое, <em>b</em> делит <em>a</em> (обозначение: $b , | , a$), если $a = bc$, где $c \in \Z$.<br />
-Если $a , \vdots , b$, то <em>b</em> - делитель <em>a</em>.</p>
-</blockquote>
-<h2 id="Свойства"><a class="header" href="#Свойства">Свойства</a></h2>
-<h3 id="Свойство-1"><a class="header" href="#Свойство-1">Свойство 1</a></h3>
-<blockquote>
-<p>Если $a , \vdots , b$ и $b , \vdots , c$, то $a , \vdots , c$</p>
-</blockquote>
+                        <h1 id="16-Аффинные-подпространства-Свойства"><a class="header" href="#16-Аффинные-подпространства-Свойства">16. Аффинные подпространства. Свойства</a></h1>
+<h2 id="Определение"><a class="header" href="#Определение">Определение</a></h2>
+<p>Пусть U — линейное подпространство линейного
+пространства V над полем K, \(a \in V\). Тогда
+\(U + a = {x + a : x \in U}\) — аффинное подпространство V.
+Положим dim(U + a) := dim(U).</p>
+<ul>
+<li>Таким образом, аффинное подпространство — это
+сдвиг линейного подпространства на вектор.</li>
+<li>Простейший пример, показывающий что это такое.
+Пусть \(V = R^2\) — стандартная евклидова плоскость. Тогда
+линейные подпространства V размерности 1 — это
+прямые, проходящие через 0, а аффинные
+подпространства — это все прямые.</li>
+<li>Здесь и далее U — линейное подпространство
+линейного пространства V над полем \(K, a, b \in V\).</li>
+</ul>
+<h2 id="Свойство-1"><a class="header" href="#Свойство-1">Свойство 1</a></h2>
+<p>U + a = U + b, если и только если \(a − b \in U\).</p>
 <h3 id="Доказательство"><a class="header" href="#Доказательство">Доказательство</a></h3>
-<blockquote>
-<p>Тогда $a = kb$ и $b = nc$, где $k, n \in \Z$, откуда следует <em>a = knc</em></p>
-</blockquote>
-<h3 id="Свойство-2"><a class="header" href="#Свойство-2">Свойство 2</a></h3>
-<blockquote>
-<p>Пусть $a, b , \vdots , d$, а $x, y \in \Z$. Тогда $ax + by , \vdots , d$</p>
-</blockquote>
+<p>\(\Rightarrow\) Если U + a = U + b, то \(a \in U + b\). Так как
+a = b + (a − b), то \(a − b \in U\).<br />
+\(\Leftarrow \)</p>
+<ul>
+<li>Пусть \(a-b \in U\), а \(x \ in U + a\). Тогда существует такое
+\(u \in U\), что x = a + u</li>
+<li>Но \((a − b) + u \in U\) (линейное подпространство замкнуто по
+сложению), значит, \(x = a + u = b + (a − b + u) \in U + b\). Таким
+образом, \(U + a \subset U + b\).</li>
+<li>Так как \(b − a \in U\), аналогично получается, что
+\(U + b \subset U + a\)</li>
+</ul>
+<h2 id="Свойство-2"><a class="header" href="#Свойство-2">Свойство 2</a></h2>
+<p>Пусть \(\lambda_1, \dotsc, \lambda_n \in K, \lambda_1 + \dotsc + \lambda_n = 1, x_1, \dotsc, x_n \in U + a\).
+Тогда \(\lambda_1x_1 + \dotsc + \lambda_nx_n \in U+a \)</p>
 <h3 id="Доказательство-1"><a class="header" href="#Доказательство-1">Доказательство</a></h3>
-<blockquote>
-<p>Тогда <em>a = kd</em> и <em>b = nd</em>, где $k, n \in \Z$, откуда следует $ax + by = (kx + ny)d$.</p>
-</blockquote>
-<h3 id="Свойство-3"><a class="header" href="#Свойство-3">Свойство 3</a></h3>
-<blockquote>
-<p>Пусть $a, d \in \N, a , \vdots , d$. Тогда $a \ge d$</p>
-</blockquote>
+<ul>
+<li>Пусть \(x_i = u_i + a\), где \(u_i \in U\) для всех
+\( i \in {1, \dotsc , n}\).</li>
+<li>Тогда \(u = \lambda_1u_1 + \dotsc + \lambda_nu_n \in U\) и
+\(\lambda_1x_1 + \dotsc + \lambda_nx_n = \lambda_1(u_1 + a) + \dotsc + \lambda_n(u_n + a) = \)
+\((\lambda_1u_1 + \dotsc + \lambda_nu_n) + (\lambda_1 + \dotsc + \lambda_n)a = u + a \in U + a\)</li>
+</ul>
+<h2 id="Свойство-3"><a class="header" href="#Свойство-3">Свойство 3</a></h2>
+<p>Пусть \(W \subset V\) таково, что для любых \(w_1,w_2,w_3 \in W\) и
+таких \(\lambda_1, \lambda_2, \lambda_3 \in K\), что \(\lambda_1 + \lambda_2 + \lambda_3 = 1\), выполнено
+\( \lambda_1w_1 + \lambda_2w_2 + \lambda_3w_3 \in W \) . Тогда W — аффинное
+подпространство V.</p>
 <h3 id="Доказательство-2"><a class="header" href="#Доказательство-2">Доказательство</a></h3>
-<blockquote>
-<p>Тогда <em>a = kd</em>, где $k \in \N$, откуда следует $a = kd \ge d$</p>
-</blockquote>
-<h2 id="Теорема-о-делении-с-остатком"><a class="header" href="#Теорема-о-делении-с-остатком">Теорема о делении с остатком</a></h2>
-<h3 id="Теорема"><a class="header" href="#Теорема">Теорема</a></h3>
-<blockquote>
-<p>Пусть $a \in \Z, b \in \N$. Тогда существуют единственные такие $q, r \in \Z$, что $0 \le r \lt b$ и $a = bq + r$.<br />
-$\bullet$ Число <em>r</em> называется остатком от деления <em>a</em> на <em>b</em>.</p>
-</blockquote>
-<h3 id="Доказательство-3"><a class="header" href="#Доказательство-3">Доказательство</a></h3>
-<blockquote>
-<p><strong>Существование</strong>. Пусть <em>q</em> - такое целое число, что $bq \le a \lt b(q+1)$, а $r = a - bq$. Тогда $0 \le r \lt b$ (вычтем из всех трех частей первого неравенства <em>bq</em>)<br />
-<strong>Единственность</strong>. $\bullet$ Пусть $a = bq_1 + r_1 = bq_2 + r_2$, причем $0 \le r_1 \lt b$ и $0 \le r_2 \lt b$<br />
-$\bullet$ НУО $r_1 &gt; r_2$. Тогда $0 &lt; r_1 - r_2 &lt; b$.<br />
-$\bullet$ С другой стороны, $r_1 - r_2 = b(q_2 - q_1) \gt b$. <strong>Противоречие</strong></p>
-</blockquote>
+<ul>
+<li>Зафиксируем \(a \in W\). Докажем, что
+U = W − a — линейное подпространство V. Для этого
+достаточно проверить замкнутость U по сложению
+векторов и умножению вектора на число.</li>
+<li>Пусть \( x_1, x_2 \in U\). Тогда \(x_1 = w_1 - a, x_2 = w_2 - a\), где
+\(w_1, w_2 \in W \) и
+$$x_1 + x_2 \in U \Longleftrightarrow (w_1 - a) + (w_2 - a) \in U \Longleftrightarrow$$
+$$(w_1 - a) + (w_2 - a) + a \in W \Longleftrightarrow w_1 + w_2 -a \in W (1)$$</li>
+<li>Последнее утверждение в (1) верно: пусть \(w_3 = a\), \(\lambda_1 = \lambda_2 = 1, \lambda_3 = -1\), тогда по условию
+\(1 \cdot 2_1 + 1 \cdot w_2 + (-1) \ cdot a \in W \)</li>
+<li>Пусть \(\lambda \in K\). Тогда
+$$\lambda x_1 \in U \Leftrightarrow \lambda(w_1 - a) \in U \Leftrightarrow \lambda(w_1-a)+a \in W \Leftrightarrow$$
+$$\lambda w_1 + (1 - \lambda)a \in W (2)$$</li>
+<li>Последнее утверждение в (2) верно: пусть \(w_2 = w_3 = a\),
+\(\lambda_1 = \lambda, \lambda_2 = 1 - \lambda ; \lambda_3 = 0 \), тогда по условию
+\(\lambda w_1 + (1-\lambda)a \in W \)</li>
+<li>Следовательно, U - линейное подпространство V, а W = U + a - аффинное подпространство</li>
+<li></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../Karpov/5_lin_space/15.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="../../Karpov/5_lin_space/1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../Karpov/5_lin_space/17.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -215,8 +242,11 @@ $\bullet$ С другой стороны, $r_1 - r_2 = b(q_2 - q_1) \gt b$. <str
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../Karpov/5_lin_space/15.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="../../Karpov/5_lin_space/1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../Karpov/5_lin_space/17.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

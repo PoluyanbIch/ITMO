@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Chapter 1 - dm_book</title>
+        <title>Дополнение до базиса линейно независимой системы в конечномерном пространстве. - dm_book</title>
 
 
         <!-- Custom HTML head -->
@@ -154,58 +154,35 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="1-Делимость-Свойства-Теорема-о-делениии-с-остатком"><a class="header" href="#1-Делимость-Свойства-Теорема-о-делениии-с-остатком">1. Делимость. Свойства. Теорема о делениии с остатком</a></h1>
-<h2 id="Делимость"><a class="header" href="#Делимость">Делимость</a></h2>
-<h3 id="Определение"><a class="header" href="#Определение">Определение</a></h3>
-<blockquote>
-<p>Пусть $a, b \in \Z, b \not = 0$. Тогда <em>a</em> делится на <em>b</em> (обозначение: $a , \vdots , b$) или, что то же самое, <em>b</em> делит <em>a</em> (обозначение: $b , | , a$), если $a = bc$, где $c \in \Z$.<br />
-Если $a , \vdots , b$, то <em>b</em> - делитель <em>a</em>.</p>
-</blockquote>
-<h2 id="Свойства"><a class="header" href="#Свойства">Свойства</a></h2>
-<h3 id="Свойство-1"><a class="header" href="#Свойство-1">Свойство 1</a></h3>
-<blockquote>
-<p>Если $a , \vdots , b$ и $b , \vdots , c$, то $a , \vdots , c$</p>
-</blockquote>
+                        <h1 id="9-Дополнение-до-базиса-линейно-независимой-системы-в-конечномерном-пространстве"><a class="header" href="#9-Дополнение-до-базиса-линейно-независимой-системы-в-конечномерном-пространстве">9. Дополнение до базиса линейно независимой системы в конечномерном пространстве</a></h1>
+<h2 id="Теорема-2"><a class="header" href="#Теорема-2">Теорема 2</a></h2>
+<p>Пусть V — конечно порожденное линейное пространство
+над полем K, а векторы \( a_1, \dotsc , a_n \) ЛНЗ. Тогда эти
+векторы можно дополнить до базиса</p>
 <h3 id="Доказательство"><a class="header" href="#Доказательство">Доказательство</a></h3>
-<blockquote>
-<p>Тогда $a = kb$ и $b = nc$, где $k, n \in \Z$, откуда следует <em>a = knc</em></p>
-</blockquote>
-<h3 id="Свойство-2"><a class="header" href="#Свойство-2">Свойство 2</a></h3>
-<blockquote>
-<p>Пусть $a, b , \vdots , d$, а $x, y \in \Z$. Тогда $ax + by , \vdots , d$</p>
-</blockquote>
-<h3 id="Доказательство-1"><a class="header" href="#Доказательство-1">Доказательство</a></h3>
-<blockquote>
-<p>Тогда <em>a = kd</em> и <em>b = nd</em>, где $k, n \in \Z$, откуда следует $ax + by = (kx + ny)d$.</p>
-</blockquote>
-<h3 id="Свойство-3"><a class="header" href="#Свойство-3">Свойство 3</a></h3>
-<blockquote>
-<p>Пусть $a, d \in \N, a , \vdots , d$. Тогда $a \ge d$</p>
-</blockquote>
-<h3 id="Доказательство-2"><a class="header" href="#Доказательство-2">Доказательство</a></h3>
-<blockquote>
-<p>Тогда <em>a = kd</em>, где $k \in \N$, откуда следует $a = kd \ge d$</p>
-</blockquote>
-<h2 id="Теорема-о-делении-с-остатком"><a class="header" href="#Теорема-о-делении-с-остатком">Теорема о делении с остатком</a></h2>
-<h3 id="Теорема"><a class="header" href="#Теорема">Теорема</a></h3>
-<blockquote>
-<p>Пусть $a \in \Z, b \in \N$. Тогда существуют единственные такие $q, r \in \Z$, что $0 \le r \lt b$ и $a = bq + r$.<br />
-$\bullet$ Число <em>r</em> называется остатком от деления <em>a</em> на <em>b</em>.</p>
-</blockquote>
-<h3 id="Доказательство-3"><a class="header" href="#Доказательство-3">Доказательство</a></h3>
-<blockquote>
-<p><strong>Существование</strong>. Пусть <em>q</em> - такое целое число, что $bq \le a \lt b(q+1)$, а $r = a - bq$. Тогда $0 \le r \lt b$ (вычтем из всех трех частей первого неравенства <em>bq</em>)<br />
-<strong>Единственность</strong>. $\bullet$ Пусть $a = bq_1 + r_1 = bq_2 + r_2$, причем $0 \le r_1 \lt b$ и $0 \le r_2 \lt b$<br />
-$\bullet$ НУО $r_1 &gt; r_2$. Тогда $0 &lt; r_1 - r_2 &lt; b$.<br />
-$\bullet$ С другой стороны, $r_1 - r_2 = b(q_2 - q_1) \gt b$. <strong>Противоречие</strong></p>
-</blockquote>
+<ul>
+<li>Если \(a_1, \dotsc , a_n\) — порождающая
+система V, то это — базис.</li>
+<li>Иначе есть вектор \(a_{n+1} \in V\Lin(a_1, \dotsc , a_n)\).</li>
+<li>По свойству 4 ЛНЗ векторов, \(a_1, \dotsc , a_n, a_{n+1}\) ЛНЗ.</li>
+<li>Будем так действовать, пока это возможно.</li>
+<li>Пространство V имеет конечную порождающую
+систему — скажем, из m векторов. Тогда по Лемме 5 не
+существует множества более чем из m ЛНЗ векторов.</li>
+<li>Значит, наш процесс должен закончиться и в
+некоторый момент мы получим линейно независимую
+порождающую систему векторов — то есть, базис.</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../Karpov/5_lin_space/8.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
-                            <a rel="next prefetch" href="../../Karpov/5_lin_space/1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../Karpov/5_lin_space/10.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -215,8 +192,11 @@ $\bullet$ С другой стороны, $r_1 - r_2 = b(q_2 - q_1) \gt b$. <str
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../Karpov/5_lin_space/8.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
-                    <a rel="next prefetch" href="../../Karpov/5_lin_space/1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../Karpov/5_lin_space/10.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
