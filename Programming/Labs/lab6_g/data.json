@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "I",
+    "coordinates": {
+      "x": 1,
+      "y": 1.0
+    },
+    "creationData": "2025-03-04T02:51:30.5409613+03:00[Europe/Moscow]",
+    "salary": 1,
+    "startDate": "Oct 10, 2000, 12:00:00 AM",
+    "endDate": null,
+    "position": "MANAGER",
+    "organization": {
+      "annualTurnover": 1.0,
+      "postalAdress": {
+        "zipCode": "1",
+        "town": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        }
+      }
+    }
+  },
+  {
+    "id": 1,
+    "name": "P",
+    "coordinates": {
+      "x": 1,
+      "y": 1.0
+    },
+    "creationData": "2025-03-04T14:02:43.3407306+03:00[Europe/Moscow]",
+    "salary": 1,
+    "startDate": "Oct 10, 2000, 12:00:00 AM",
+    "endDate": null,
+    "position": "MANAGER",
+    "organization": {
+      "annualTurnover": 5.0,
+      "postalAdress": {
+        "zipCode": "5",
+        "town": {
+          "x": 5.0,
+          "y": 5.0,
+          "z": 5.0
+        }
+      }
+    }
+  }
+]

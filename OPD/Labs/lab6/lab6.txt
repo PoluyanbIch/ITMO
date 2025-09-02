@@ -1,0 +1,91 @@
+ORG 0x0
+V0: WORD $default, 0x180
+V1: WORD $default, 0x180
+V2: WORD $int2   , 0x180
+V3: WORD $int3   , 0x180
+V4: WORD $default, 0x180
+V5: WORD $default, 0x180
+V6: WORD $default, 0x180
+V7: WORD $default, 0x180
+
+
+ORG 0x04E
+X: WORD ?
+MAX: WORD 0x001B
+MIN: WORD 0xFFE8
+
+default: 
+	IRET
+
+start:	
+	DI
+	CLA
+	OUT 0x1
+	OUT 0x3
+	OUT 0xB
+	OUT 0xD
+	OUT 0x11
+	OUT 0x15
+	OUT 0x19
+	OUT 0x1D
+	LD #0xA
+	OUT 5
+	LD #0xB
+	OUT 7
+	EI
+
+main:	
+	DI
+	LD X
+	INC
+	INC
+	CALL check
+	ST X
+	NOP ; Для установки значения в 2 и проверки ВУ-2
+	EI
+	JUMP main
+
+int2:		; Обработка прерывания на ВУ-2
+	DI	
+	LD X
+	NOP
+	IN 4	; DR ВУ-2  --> в аккумулятор
+	SXTB
+	SUB X	; Вычитаем X
+	CALL check
+	ST X	; Результат сохраняем в X (DR(ВУ-2) - X --> X)
+	NOP
+	EI
+	IRET	
+	
+int3:		; Обработка прерывания на ВУ-3
+	DI	
+	LD X
+	NOP
+	ASL
+	ASL
+	ADD X
+	SUB #10	; AC = 5X - 10
+	OUT 6	; Вывод на ВУ-3
+	NOP
+	EI
+	IRET
+
+check:			; Проверка ОДЗ
+
+check_min:
+	CMP MIN
+	BPL check_max	; Если X > min - сравниваем с max
+	JUMP ld_min	; Иначе - загружаем наименьшее
+
+check_max:
+	CMP MAX		; Если X > max - загружаем наименьшее
+	BMI return
+
+ld_min:
+	LD MIN
+
+return:
+	RET
+	
+	

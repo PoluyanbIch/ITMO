@@ -2,6 +2,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+
+        new ByteArrayOutputStream
+
         Person person = new Person("Человек", "Нора");
         person.addGoat(new Goat("Коза1", "Загон"));
         person.addGoat(new Goat("Коза2", "Загон"));

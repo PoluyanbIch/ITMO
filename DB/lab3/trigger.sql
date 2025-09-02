@@ -1,16 +1,20 @@
--- Функция
-CREATE FUNCTION update_extinct_since()
+-- Если для одного и того же вида был записан один и тот же момент
+-- открытия в одном и том же месте дважды.
+
+CREATE OR REPLACE FUNCTION check_unique_discovery()
 RETURNS TRIGGER AS $$
 BEGIN
-UPDATE Species
-SET extinct_since = 'discovered recently'
-WHERE species_id = NEW.species_id AND extinct_since IS NULL;
+    IF EXISTS (SELECT 1 FROM discovery
+               WHERE species_id = NEW.species_id
+               AND location_id = NEW.location_id
+               AND discovery_date = NEW.discovery_date) THEN
+        RAISE EXCEPTION 'Такое открытие уже существует для этого вида в этом месте';
+END IF;
 RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
--- Триггер
-CREATE TRIGGER trg_update_extinct_since
-    AFTER INSERT ON Fossil
+CREATE TRIGGER unique_discovery_trigger
+    BEFORE INSERT ON discovery
     FOR EACH ROW
-    EXECUTE FUNCTION update_extinct_since();
+    EXECUTE FUNCTION check_unique_discovery();

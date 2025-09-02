@@ -1,0 +1,628 @@
+апр. 29, 2025 1:28:13 PM com.lab6.server.managers.DumpManager <init>
+SEVERE: Environment variable LAB5_FILE_PATH not found!
+апр. 29, 2025 1:29:18 PM com.lab6.server.managers.DumpManager <init>
+SEVERE: Environment variable LAB5_FILE_PATH not found!
+апр. 29, 2025 1:29:50 PM com.lab6.server.managers.DumpManager <init>
+SEVERE: The file at the specified path was not found!
+апр. 29, 2025 1:41:31 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 1:41:32 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 1:41:32 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 1:41:32 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 1:41:47 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=16, readyOps=16
+апр. 29, 2025 1:41:47 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:63770
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 956
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 188
+апр. 29, 2025 1:41:47 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 1:41:47 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:63770
+апр. 29, 2025 1:42:41 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:63770], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=1, readyOps=1
+апр. 29, 2025 1:42:41 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 941 bytes received from client
+апр. 29, 2025 1:42:41 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 1:42:41 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='add', band={id=1, name='a', coordinates={x=10.0, y=20}, creationDate=2025-04-29T13:42:41.692651700, numberOfParticipants=15, albumsCount=10, description='arw', genre=JAZZ, organization={name='awe', address='awe'}}}
+апр. 29, 2025 1:42:41 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'add'
+апр. 29, 2025 1:42:41 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 1:42:41 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:63770], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=4, readyOps=4
+апр. 29, 2025 1:42:41 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 352
+апр. 29, 2025 1:42:41 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:42 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 96
+апр. 29, 2025 1:42:42 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 1:42:42 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:63770
+апр. 29, 2025 1:42:45 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:63770], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=1, readyOps=1
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 134 bytes received from client
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 1:42:45 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='show', band=null}
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'show'
+апр. 29, 2025 1:42:45 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 1:42:45 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:63770], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=4, readyOps=4
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 1972
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 180
+апр. 29, 2025 1:42:45 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 1:42:45 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:63770
+апр. 29, 2025 1:47:18 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+апр. 29, 2025 1:54:09 PM com.lab6.server.Server main
+SEVERE: Введены некорректные данные элемента коллекции!
+апр. 29, 2025 1:55:10 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 1:55:11 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 1:55:11 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 1:55:11 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 1:55:17 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=16, readyOps=16
+апр. 29, 2025 1:55:17 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:64096
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 956
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 188
+апр. 29, 2025 1:55:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 1:55:17 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:64096
+апр. 29, 2025 1:56:30 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64096], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=1, readyOps=1
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 952 bytes received from client
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 1:56:30 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='add', band={id=1, name='a', coordinates={x=10.0, y=20}, creationDate=2025-04-29T13:56:30.423177900, numberOfParticipants=12, albumsCount=123, description='qwe', genre=MANAGER, studio={name='awd', address='awd'}}}
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'add'
+апр. 29, 2025 1:56:30 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 1:56:30 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64096], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=4, readyOps=4
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 352
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 96
+апр. 29, 2025 1:56:30 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 1:56:30 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64096
+апр. 29, 2025 2:01:33 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+апр. 29, 2025 2:11:51 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 2:11:51 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 2:11:51 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 2:11:51 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 2:11:58 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=16, readyOps=16
+апр. 29, 2025 2:11:58 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:64338
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 956
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 188
+апр. 29, 2025 2:11:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:11:58 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:64338
+апр. 29, 2025 2:12:24 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64338], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 944 bytes received from client
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:12:24 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='add', band={id=1, name='a', coordinates={x=10.0, y=20}, creationDate=2025-04-29T14:12:24.581415900, numberOfParticipants=1000, albumsCount=100, description='awe', genre=MANAGER, studio={name='awdawd', address='qwdqwd'}}}
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'add'
+апр. 29, 2025 2:12:24 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:12:24 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64338], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 352
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 96
+апр. 29, 2025 2:12:24 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:12:24 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64338
+апр. 29, 2025 2:12:28 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64338], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:12:28 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:12:28 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:12:28 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='show', band=null}
+апр. 29, 2025 2:12:28 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'show'
+апр. 29, 2025 2:12:28 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:12:28 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64338], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 2200
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 152
+апр. 29, 2025 2:12:29 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:12:29 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64338
+апр. 29, 2025 2:13:31 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+апр. 29, 2025 2:21:36 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 2:21:37 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 2:21:37 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 2:21:37 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 2:21:50 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=16, readyOps=16
+апр. 29, 2025 2:21:50 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:64462
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 956
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 188
+апр. 29, 2025 2:21:50 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:21:50 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:64462
+апр. 29, 2025 2:24:13 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 951 bytes received from client
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:24:13 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='add', band={id=1, name='a', coordinates={x=10.0, y=20}, creationDate=2025-04-29T14:24:13.612686500, salary=1200120, workersCount=100, description='qweqwe', position=MANAGER, organization={name='awdawd', address='Lenina'}}}
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'add'
+апр. 29, 2025 2:24:13 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:24:13 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 352
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 96
+апр. 29, 2025 2:24:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:24:13 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:24:17 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:24:17 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='show', band=null}
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'show'
+апр. 29, 2025 2:24:17 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:24:17 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 2335
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 31
+апр. 29, 2025 2:24:17 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:24:17 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:25:18 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:25:18 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='info', band=null}
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'info'
+апр. 29, 2025 2:25:18 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:25:18 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 593
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 81
+апр. 29, 2025 2:25:18 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:25:18 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:26:03 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:26:03 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='sort', band=null}
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'sort'
+апр. 29, 2025 2:26:03 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:26:03 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 344
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 88
+апр. 29, 2025 2:26:03 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:26:03 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:26:07 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:26:07 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='show', band=null}
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'show'
+апр. 29, 2025 2:26:07 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:26:07 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 2335
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 31
+апр. 29, 2025 2:26:07 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:26:07 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:26:57 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:26:57 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 953 bytes received from client
+апр. 29, 2025 2:26:57 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:26:57 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='update 129', band={id=1, name='q', coordinates={x=12.0, y=12}, creationDate=2025-04-29T14:26:57.942222500, salary=1000, workersCount=100, description='qwe', position=MANAGER, organization={name='awda', address='awdawd'}}}
+апр. 29, 2025 2:26:57 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'update'
+апр. 29, 2025 2:26:57 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:26:57 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64462], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:26:57 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 330
+апр. 29, 2025 2:26:57 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:26:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 74
+апр. 29, 2025 2:26:58 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:26:58 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64462
+апр. 29, 2025 2:28:19 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+апр. 29, 2025 2:28:49 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 2:28:50 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 2:28:50 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 2:28:50 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 2:28:55 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=16, readyOps=16
+апр. 29, 2025 2:28:55 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:64509
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 959
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 191
+апр. 29, 2025 2:28:56 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:28:56 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:64509
+апр. 29, 2025 2:29:13 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64509], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=1, readyOps=1
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 2:29:13 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='help', band=null}
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'help'
+апр. 29, 2025 2:29:13 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 2:29:13 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:64509], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=4, readyOps=4
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 2202
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:13 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:29:14 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 154
+апр. 29, 2025 2:29:14 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:29:14 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:64509
+апр. 29, 2025 2:29:58 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+апр. 29, 2025 2:30:05 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 2:30:05 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 2:30:05 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 2:30:05 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 2:30:10 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@7a5d012c, interestOps=16, readyOps=16
+апр. 29, 2025 2:30:10 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:64545
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 959
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 191
+апр. 29, 2025 2:30:10 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 2:30:10 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:64545
+апр. 29, 2025 2:30:21 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.
+���. 29, 2025 2:44:29 PM com.lab6.server.managers.DumpManager <init>
+SEVERE: Environment variable LAB5_FILE_PATH not found!
+апр. 29, 2025 5:22:42 PM com.lab6.server.Server main
+INFO: The collection file has been successfully loaded!
+апр. 29, 2025 5:22:42 PM com.lab6.server.managers.ServerNetworkManager startServer
+INFO: Server started on Port:13876
+апр. 29, 2025 5:22:42 PM com.lab6.server.Server run
+INFO: Selector started
+апр. 29, 2025 5:22:42 PM com.lab6.server.Server run
+INFO: To stop the server, press [Ctrl + C]
+апр. 29, 2025 5:22:49 PM com.lab6.server.Server run
+INFO: Processing key: channel=sun.nio.ch.ServerSocketChannelImpl[/[0:0:0:0:0:0:0:0]:13876], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=16, readyOps=16
+апр. 29, 2025 5:22:49 PM com.lab6.server.Server run
+INFO: Client connected: /127.0.0.1:50195
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 959
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 191
+апр. 29, 2025 5:22:49 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 5:22:49 PM com.lab6.server.Server InitialCommandsData
+INFO: Command list sent to the client: /127.0.0.1:50195
+апр. 29, 2025 5:22:51 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:50195], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=1, readyOps=1
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: 131 bytes received from client
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager receive
+INFO: Request received from client
+апр. 29, 2025 5:22:51 PM com.lab6.server.Server run
+INFO: Request received from client: Request{string='show', band=null}
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.Executer runCommand
+INFO: Выполнение команды 'show'
+апр. 29, 2025 5:22:51 PM com.lab6.server.Server run
+INFO: Command executed successfully
+апр. 29, 2025 5:22:51 PM com.lab6.server.Server run
+INFO: Processing key: channel=java.nio.channels.SocketChannel[connected local=/127.0.0.1:13876 remote=/127.0.0.1:50195], selector=sun.nio.ch.WEPollSelectorImpl@6108b2d7, interestOps=4, readyOps=4
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet with message length sent: 2309
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:51 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Packet of bytes sent with length: 256
+апр. 29, 2025 5:22:52 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Last packet of bytes sent with length: 5
+апр. 29, 2025 5:22:52 PM com.lab6.server.managers.ServerNetworkManager send
+INFO: Stop packet sent
+
+апр. 29, 2025 5:22:52 PM com.lab6.server.Server run
+INFO: Response sent to client: /127.0.0.1:50195
+апр. 29, 2025 5:23:02 PM com.lab6.server.Server lambda$main$0
+INFO: Server shutdown complete.

@@ -5,11 +5,15 @@ import managers.DumpManager;
 import utility.Runner;
 import utility.StandardConsole;
 
+import java.io.*;
 import java.util.Map;
 
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        
+
         StandardConsole console = new StandardConsole();
 
         String filePath = System.getenv().get("VAR");
