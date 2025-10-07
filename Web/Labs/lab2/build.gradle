@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += ['-parameters']
+}
+
+group = 'ru.poluyanblch'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+    compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+war {
+    archiveFileName = 'webapp.war'
+    from 'src/main/webapp'
+
+    manifest {
+        attributes(
+                'Implementation-Title': 'Web Lab Application',
+                'Implementation-Version': version,
+                'Built-By': System.getProperty('user.name'),
+                'Built-JDK': System.getProperty('java.version')
+        )
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Опционально: задача для показа информации о WAR
+task showWarInfo {
+    doLast {
+        println "WAR файл: ${war.archiveFile.get()}"
+        println "Размер: ${war.archiveFile.get().asFile.length()} bytes"
+    }
+}
+
+war.finalizedBy showWarInfo

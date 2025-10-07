@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>Web Lab Application</display-name>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <servlet-class>ru.poluyanblch.web.servlets.AreaCheckServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AreaCheckServlet</servlet-name>
+        <url-pattern>/checkArea</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ControllerServlet</servlet-name>
+        <servlet-class>ru.poluyanblch.web.servlets.ControllerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ControllerServlet</servlet-name>
+        <url-pattern>/controller</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>ru.poluyanblch.web.servlets.AppContextListener</listener-class>
+    </listener>
+
+</web-app>
