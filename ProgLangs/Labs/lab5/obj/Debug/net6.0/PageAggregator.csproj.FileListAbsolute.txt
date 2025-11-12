@@ -1,0 +1,15 @@
+C:\itmo\ProgLangs\Labs\lab5\bin\Debug\net6.0\PageAggregator.exe
+C:\itmo\ProgLangs\Labs\lab5\bin\Debug\net6.0\PageAggregator.deps.json
+C:\itmo\ProgLangs\Labs\lab5\bin\Debug\net6.0\PageAggregator.runtimeconfig.json
+C:\itmo\ProgLangs\Labs\lab5\bin\Debug\net6.0\PageAggregator.dll
+C:\itmo\ProgLangs\Labs\lab5\bin\Debug\net6.0\PageAggregator.pdb
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.GeneratedMSBuildEditorConfig.editorconfig
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.AssemblyInfoInputs.cache
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.AssemblyInfo.cs
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.csproj.CoreCompileInputs.cache
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.sourcelink.json
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.dll
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\refint\PageAggregator.dll
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.pdb
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\PageAggregator.genruntimeconfig.cache
+C:\itmo\ProgLangs\Labs\lab5\obj\Debug\net6.0\ref\PageAggregator.dll

@@ -1,0 +1,15 @@
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\bin\Debug\net9.0\TestApp.exe
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\bin\Debug\net9.0\TestApp.deps.json
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\bin\Debug\net9.0\TestApp.runtimeconfig.json
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\bin\Debug\net9.0\TestApp.dll
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\bin\Debug\net9.0\TestApp.pdb
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.AssemblyInfoInputs.cache
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.AssemblyInfo.cs
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.csproj.CoreCompileInputs.cache
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.sourcelink.json
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.dll
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\refint\TestApp.dll
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.pdb
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\TestApp.genruntimeconfig.cache
+C:\ITMO\ProgLangs\Labs\lab2\TestApp\obj\Debug\net9.0\ref\TestApp.dll
