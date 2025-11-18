@@ -1,0 +1,17 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:outputStylesheet name="graph.css" library="style"/>
+    <h:panelGroup styleClass="coordinate-plate-outer" layout="block">
+        <canvas id="canvas"></canvas>
+        <h:panelGroup id="tooltip" styleClass="hidden"></h:panelGroup>
+    </h:panelGroup>
+    <h:outputScript>
+        var globalR = #{hitFormBean.globalRAsJs};
+        var globalX = #{hitFormBean.globalXAsJs};
+        var globalY = #{hitFormBean.globalYAsJs};
+        var hits = #{hitsBean.generateHitsAsJson()};
+    </h:outputScript>
+
+    <h:outputScript name="graph.js" library="script" />
+</ui:composition>

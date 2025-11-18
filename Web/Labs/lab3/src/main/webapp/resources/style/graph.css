@@ -1,0 +1,28 @@
+
+.coordinate-plate-outer {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.coordinate-plate-outer canvas {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.coordinate-plate-outer #tooltip {
+    display: block;
+    position: absolute;
+    background-color: #0d0d0f9d;
+    border-radius: 5px;
+    width: 155px;
+    color: var(--color-light);
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.coordinate-plate-outer #tooltip.hidden {
+    display: none;
+}

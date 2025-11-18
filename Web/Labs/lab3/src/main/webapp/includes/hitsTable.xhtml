@@ -1,0 +1,50 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+<h:outputStylesheet name="hitsTable.css" library="style" target="head"/>
+    <h:panelGroup styleClass="history-table-outer" layout="block">
+        <p:dataTable value="#{hitsBean.hits}" var="hit" id="hits-table" styleClass="history-table"
+                     emptyMessage="No hits yet." sortMode="single" scrollable="true" scrollHeight="300">
+            <p:column headerText="ID" sortBy="#{hit.id}" sortOrder="descending">
+                <h:outputText value="#{hit.id}" title="#{hit.id}" />
+            </p:column>
+
+            <p:column headerText="X">
+                <h:outputText value="#{hitsBean.formatCell(hit.x)}" title="#{hit.x}" />
+            </p:column>
+
+            <p:column headerText="Y">
+                <h:outputText value="#{hitsBean.formatCell(hit.y)}" title="#{hit.y}" />
+            </p:column>
+
+            <p:column headerText="R">
+                <h:outputText value="#{hitsBean.formatCell(hit.r)}" title="#{hit.r}" />
+            </p:column>
+
+            <p:column headerText="Hit?">
+                <h:outputText value="#{hit.hit}" title="#{hit.hit}" />
+            </p:column>
+
+            <p:column headerText="Execution time">
+                <h:outputText value="#{hit.executionTime}" title="#{hit.executionTime}">
+                    <f:convertNumber pattern="#0.########" locale="en" />
+                </h:outputText>
+            </p:column>
+            <p:column headerText="Current time">
+                <h:outputText value="#{hit.currentDatetime}" title="#{hit.currentDatetime}">
+                    <f:convertDateTime pattern="yyyy-MM-dd HH:mm:ss" />
+                </h:outputText>
+            </p:column>
+        </p:dataTable>
+        <p:commandButton
+                id="clear-button"
+                title="Clear hits history"
+                icon="pi pi-trash"
+                action="#{hitsBean.clear()}"
+                update="hits-table"
+                oncomplete="updateHits('#{hitsBean.generateHitsAsJson()}')"
+        />
+    </h:panelGroup>
+</ui:composition>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Main Page</title>
+    <h:outputStylesheet name="style.css" library="style"/>
+    <h:outputStylesheet name="main.css" library="style"/>
+    <h:outputScript name="script.js" library="script" />
+</h:head>
+<f:view>
+    <h:panelGroup styleClass="main-container" layout="block">
+        <ui:include src="includes/header.xhtml"/>
+        <h:form>
+            <h:commandButton styleClass="back-button" value="Go to start page" action="toStartPage" />
+        </h:form>
+        <h:panelGroup styleClass="top-line-container" layout="block">
+            <ui:include src="includes/graph.xhtml"/>
+            <ui:include src="includes/form.xhtml"/>
+        </h:panelGroup>
+        <ui:include src="includes/hitsTable.xhtml"/>
+    </h:panelGroup>
+</f:view>
+</html>

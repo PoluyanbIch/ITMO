@@ -1,0 +1,8 @@
+.top-line-container {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+}

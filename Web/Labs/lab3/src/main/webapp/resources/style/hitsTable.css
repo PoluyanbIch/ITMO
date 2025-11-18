@@ -1,0 +1,80 @@
+
+.history-table-outer {
+    margin-top: 150px;
+    position: relative;
+}
+.history-table-outer #clear-button {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 80px;
+    height: 30px;
+
+    background: var(--color-darker);
+    border-radius: 10px 10px 0 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 0;
+    transition: 0.2s ease-in-out;
+}
+
+#clear-button span.ui-icon {
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    top: 17px;
+    left: 39px
+}
+
+.history-table-outer #clear-button:hover {
+    top: -40px;
+    height: 40px;
+}
+
+
+.history-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    overflow: hidden;
+    background-color: var(--color-darker);
+    border-radius: 10px 0 10px 10px  ;
+}
+
+
+.history-table td, th  {
+    border: none  !important;
+}
+
+.history-table thead tr {
+    border-bottom: 2px solid var(--color-bright-red);
+
+}
+
+.history-table th {
+    height: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    width: 33.33%;
+    color: var(--color-light);
+}
+
+.history-table td {
+    color: var(--color-light);
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+}
+
+
+.history-table tr {
+    background-color: var(--color-darker);
+    transition: 0.1s ease-in-out;
+    width: 33.33%;
+    height: 40px;
+}
+.history-table tr:hover {
+    background-color: color-mix(in hsl, var(--color-dark), #ffffff 10%);
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+
+header {
+    width: 100%;
+    height: 100px;
+    margin: 0;
+}
+
+header>.wrapper {
+    height: 70px;
+    width: 100%;
+    margin: auto;
+    border-bottom: 2px solid var(--color-bright-red);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+header .header-content>div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header .header-content .group {
+    text-align: right;
+}
+
+header .header-content .title {
+    color: var(--color-bright-red);
+    font-weight: 600;
+}
+header .header-content .title::after {
+    content: "(var.2110)";
+    color: var(--color-light);
+    font-weight: 200;
+    font-size: small;
+}
