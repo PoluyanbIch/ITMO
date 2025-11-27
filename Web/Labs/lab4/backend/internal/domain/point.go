@@ -5,6 +5,6 @@ type Point struct {
 	X      float64 `db:"x"`
 	Y      float64 `db:"y"`
 	R      float64 `db:"r"`
-	isHit  bool    `db:"isHit"`
-	userID int     `db:"userID"`
+	IsHit  bool    `db:"isHit"`
+	UserID int     `db:"userID"`
 }
