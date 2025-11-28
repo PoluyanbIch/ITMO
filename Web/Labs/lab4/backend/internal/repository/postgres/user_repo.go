@@ -2,6 +2,8 @@ package postgres
 
 import (
 	"context"
+	"database/sql"
+	"errors"
 
 	"github.com/PoluyanbIch/ITMO/Web/Labs/lab4/backend/internal/domain"
 )
@@ -34,6 +36,9 @@ func (ur *UserRepository) GetUserByLogin(ctx context.Context, login string) (dom
 	`
 	user := domain.User{}
 	if err := ur.db.conn.SelectContext(ctx, &user, query, login); err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return domain.User{}, domain.ErrUserNotFound
+		}
 		ur.db.log.Error("get user by login db error", "error", err)
 		return domain.User{}, err
 	}
