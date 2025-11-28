@@ -26,3 +26,16 @@ func (pr *PointRepository) Add(ctx context.Context, p domain.Point) error {
 	}
 	return nil
 }
+
+func (pr *PointRepository) GetPointsByUserID(ctx context.Context, id int) ([]domain.Point, error) {
+	query := `
+				SELECT * FROM points
+				WHERE userID = $1
+	`
+	points := []domain.Point{}
+	if err := pr.db.conn.SelectContext(ctx, &points, query, id); err != nil {
+		pr.db.log.Error("get points by user id db error", "error", err)
+		return nil, err
+	}
+	return points, nil
+}

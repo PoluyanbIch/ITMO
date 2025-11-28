@@ -4,7 +4,7 @@ import "context"
 
 type UserRepository interface {
 	Add(context.Context, User) error
-	Check(context.Context, User) (bool, error)
+	GetUserByLogin(context.Context, string) (User, error)
 }
 
 type PointRepository interface {
