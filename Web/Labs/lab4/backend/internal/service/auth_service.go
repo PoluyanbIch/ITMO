@@ -12,82 +12,151 @@ import (
 )
 
 type AuthService struct {
-	userRepo  domain.UserRepository
-	jwtSecret string
+	userRepo      domain.UserRepository
+	jwtSecret     string
+	refreshSecret string
 }
 
-func NewAuthService(userRepo domain.UserRepository, jwtSecret string) *AuthService {
+type AuthTokens struct {
+	AccessToken  string
+	RefreshToken string
+}
+
+func NewAuthService(userRepo domain.UserRepository, jwtSecret string, refreshSecret string) *AuthService {
 	return &AuthService{
-		userRepo:  userRepo,
-		jwtSecret: jwtSecret,
+		userRepo:      userRepo,
+		jwtSecret:     jwtSecret,
+		refreshSecret: refreshSecret,
 	}
 }
 
-func (s *AuthService) Register(ctx context.Context, login string, password string) (string, error) {
+func (s *AuthService) Register(ctx context.Context, login string, password string) (AuthTokens, error) {
+	authTokens := AuthTokens{}
 	_, err := s.userRepo.GetUserByLogin(ctx, login)
 	if err == nil {
-		return "", ErrLoginExists
+		return authTokens, ErrLoginExists
 	}
 	if !errors.Is(err, domain.ErrUserNotFound) {
-		return "", err
+		return authTokens, err
 	}
 	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil {
-		return "", err
+		return authTokens, err
 	}
 	user := domain.User{
 		Login:        login,
 		PasswordHash: string(hashedPassword),
 	}
 	if err := s.userRepo.Add(ctx, user); err != nil {
-		return "", err
+		return authTokens, err
 	}
 	user, err = s.userRepo.GetUserByLogin(ctx, login)
 	if err != nil {
-		return "", err
+		return authTokens, err
 	}
 	userID := user.ID
-	token, err := s.generateJWT(userID)
+	accessToken, err := s.generateAccessToken(userID)
 	if err != nil {
-		return "", err
+		return authTokens, err
 	}
-	return token, nil
+	refreshToken, err := s.generateRefreshToken(userID)
+	if err != nil {
+		return authTokens, err
+	}
+	authTokens.AccessToken = accessToken
+	authTokens.RefreshToken = refreshToken
+	return authTokens, nil
 }
 
-func (s *AuthService) Login(ctx context.Context, login string, password string) (string, error) {
+func (s *AuthService) Login(ctx context.Context, login string, password string) (AuthTokens, error) {
+	authTokens := AuthTokens{}
 	user, err := s.userRepo.GetUserByLogin(ctx, login)
 	if err != nil {
 		if errors.Is(err, domain.ErrUserNotFound) {
-			return "", ErrInvalidCredentials
+			return authTokens, ErrInvalidCredentials
 		}
-		return "", err
+		return authTokens, err
 	}
 	err = bcrypt.CompareHashAndPassword([]byte(user.PasswordHash), []byte(password))
 	if err != nil {
-		return "", err
+		if errors.Is(err, bcrypt.ErrMismatchedHashAndPassword) {
+			return authTokens, ErrInvalidCredentials
+		}
+		return authTokens, err
 	}
-	token, err := s.generateJWT(user.ID)
+	accessToken, err := s.generateAccessToken(user.ID)
 	if err != nil {
-		return "", err
+		return authTokens, err
 	}
-	return token, nil
+	refreshToken, err := s.generateRefreshToken(user.ID)
+	if err != nil {
+		return authTokens, err
+	}
+	authTokens.AccessToken = accessToken
+	authTokens.RefreshToken = refreshToken
+	return authTokens, nil
 }
 
-func (s *AuthService) generateJWT(userID int) (string, error) {
+func (s *AuthService) Refresh(ctx context.Context, refreshToken string) (AuthTokens, error) {
+	userId, err := s.VerifyRefreshToken(refreshToken)
+	if err != nil {
+		return AuthTokens{}, err
+	}
+	access, err := s.generateAccessToken(userId)
+	if err != nil {
+		return AuthTokens{}, err
+	}
+	refresh, err := s.generateRefreshToken(userId)
+	if err != nil {
+		return AuthTokens{}, err
+	}
+	return AuthTokens{AccessToken: access, RefreshToken: refresh}, nil
+}
+
+func (s *AuthService) generateAccessToken(userID int) (string, error) {
 	claims := jwt.RegisteredClaims{
-		Subject:   strconv.FormatInt(int64(userID), 10),
-		ExpiresAt: jwt.NewNumericDate(time.Now().Add(24 * time.Hour)),
+		Subject:   strconv.Itoa(userID),
+		ExpiresAt: jwt.NewNumericDate(time.Now().Add(15 * time.Minute)),
 		IssuedAt:  jwt.NewNumericDate(time.Now()),
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	return token.SignedString([]byte(s.jwtSecret))
 }
 
-func (s *AuthService) VerifyToken(tokenString string) (int, error) {
+func (s *AuthService) generateRefreshToken(userID int) (string, error) {
+	claims := jwt.RegisteredClaims{
+		Subject:   strconv.Itoa(userID),
+		ExpiresAt: jwt.NewNumericDate(time.Now().Add(30 * 24 * time.Hour)),
+		IssuedAt:  jwt.NewNumericDate(time.Now()),
+	}
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	return token.SignedString([]byte(s.refreshSecret))
+}
+
+func (s *AuthService) VerifyAccessToken(tokenString string) (int, error) {
 	claims := &jwt.RegisteredClaims{}
 
 	token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
 		return []byte(s.jwtSecret), nil
+	})
+
+	if err != nil || !token.Valid {
+		return 0, ErrInvalidToken
+	}
+
+	userID, err := strconv.Atoi(claims.Subject)
+	if err != nil {
+		return 0, ErrInvalidToken
+	}
+
+	return userID, nil
+}
+
+func (s *AuthService) VerifyRefreshToken(tokenString string) (int, error) {
+	claims := &jwt.RegisteredClaims{}
+
+	token, err := jwt.ParseWithClaims(tokenString, claims, func(token *jwt.Token) (interface{}, error) {
+		return []byte(s.refreshSecret), nil
 	})
 
 	if err != nil || !token.Valid {

@@ -35,7 +35,7 @@ func (ur *UserRepository) GetUserByLogin(ctx context.Context, login string) (dom
 				WHERE login = $1
 	`
 	user := domain.User{}
-	if err := ur.db.conn.SelectContext(ctx, &user, query, login); err != nil {
+	if err := ur.db.conn.GetContext(ctx, &user, query, login); err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			return domain.User{}, domain.ErrUserNotFound
 		}

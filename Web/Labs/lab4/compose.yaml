@@ -1,0 +1,58 @@
+services:
+
+  backend:
+    image: backend:latest
+    build:
+      context: backend
+      dockerfile: Dockerfile.back
+    container_name: backend
+    restart: unless-stopped
+    ports:
+      - 28080:8080
+    volumes:
+      - ./backend/config.yaml:/config.yaml
+    environment:
+      - ADDRESS=:8080
+      - DB_ADDRESS=postgres://postgres:password@postgres:5432/postgres
+      - LOG_LEVEL=DEBUG
+      - JWT_SECRET=dalwdajwfpm
+      - REFRESH_SECRET=gnajkbgoagl
+    depends_on:
+      postgres:
+        condition: service_healthy
+        
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - postgres:/var/lib/postgresql
+    healthcheck:
+      test: [ "CMD", "pg_isready" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    restart: unless-stopped
+    ports:
+      - "18888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@test.com
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_DISABLE_POSTFIX: "true"
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+volumes:
+  postgres:
+  pgadmin:

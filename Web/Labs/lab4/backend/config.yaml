@@ -1,0 +1,5 @@
+address: localhost:80
+db_address: localhost:82
+log_level: DEBUG
+jwt_secret: lkanwfkopanwf
+refresh_secret: ljabwgolaog
