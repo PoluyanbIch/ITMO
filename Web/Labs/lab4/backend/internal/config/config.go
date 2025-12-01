@@ -12,6 +12,7 @@ type Config struct {
 	LogLevel      string `yaml:"log_level" env:"LOG_LEVEL" env-default:"DEBUG"`
 	JWTSecret     string `yaml:"jwt_secret" env:"JWT_SECRET" env-default:"aakhebfkajf"`
 	RefreshSecret string `yaml:"refresh_secret" env:"REFRESH_SECRET" env-default:"slfjaglejbeg"`
+	CorsOrigins   string `yaml:"cors_origins" env:"CORS_ORIGINS" env-default:"http://localhost:3000,http://frontend:80"`
 }
 
 func MustLoad(configPath string) Config {

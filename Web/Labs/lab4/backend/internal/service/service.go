@@ -10,8 +10,12 @@ type Service struct {
 	PointRepo domain.PointRepository
 }
 
+func NewService(pointRepo domain.PointRepository) *Service {
+	return &Service{PointRepo: pointRepo}
+}
+
 func (s *Service) AddPoint(ctx context.Context, point domain.Point) error {
-	if point.X < -3 || point.X > 5 {
+	if point.X < -5 || point.X > 5 {
 		return ErrInvalidX
 	}
 	if point.Y < -5 || point.Y > 3 {

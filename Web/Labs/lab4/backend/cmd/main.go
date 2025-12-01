@@ -41,10 +41,13 @@ func run(cfg config.Config, log *slog.Logger) error {
 	}
 
 	userRepo := postgres.NewUserRepository(db)
+	pointRepo := postgres.NewPointRepository(db)
 	authService := service.NewAuthService(userRepo, cfg.JWTSecret, cfg.RefreshSecret)
-	handler := myHttp.NewHandler(log, nil, authService)
+	srv := service.NewService(pointRepo)
+	handler := myHttp.NewHandler(log, srv, authService)
 
 	mux := http.NewServeMux()
+
 	mux.HandleFunc("POST /auth/login", handler.LoginHandler)
 	mux.HandleFunc("POST /auth/register", handler.RegisterHandler)
 	mux.HandleFunc("POST /auth/refresh", handler.RefreshHandler)
@@ -53,9 +56,10 @@ func run(cfg config.Config, log *slog.Logger) error {
 	mux.Handle("GET /points", handler.AuthMiddleware(http.HandlerFunc(handler.GetPointsHandler)))
 	mux.Handle("POST /points/add", handler.AuthMiddleware(http.HandlerFunc(handler.AddPointHandler)))
 
+	h := myHttp.CorsMiddleware(mux, cfg.CorsOrigins)
 	server := http.Server{
 		Addr:    cfg.Address,
-		Handler: mux,
+		Handler: h,
 	}
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)

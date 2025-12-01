@@ -3,8 +3,11 @@ package service
 import (
 	"context"
 	"errors"
+	"regexp"
 	"strconv"
+	"strings"
 	"time"
+	"unicode"
 
 	"github.com/PoluyanbIch/ITMO/Web/Labs/lab4/backend/internal/domain"
 	"github.com/golang-jwt/jwt/v5"
@@ -27,6 +30,15 @@ type CustomClaims struct {
 	jwt.RegisteredClaims
 }
 
+const (
+	MinLoginLength    = 4
+	MaxLoginLength    = 32
+	MinPasswordLength = 8
+	MaxPasswordLength = 64
+)
+
+var loginRegex = regexp.MustCompile(`^[a-zA-Z0-9_]+$`)
+
 func NewAuthService(userRepo domain.UserRepository, jwtSecret string, refreshSecret string) *AuthService {
 	return &AuthService{
 		userRepo:      userRepo,
@@ -37,6 +49,15 @@ func NewAuthService(userRepo domain.UserRepository, jwtSecret string, refreshSec
 
 func (s *AuthService) Register(ctx context.Context, login string, password string) (AuthTokens, error) {
 	authTokens := AuthTokens{}
+
+	if err := validateLogin(login); err != nil {
+		return authTokens, err
+	}
+
+	if err := validatePassword(password); err != nil {
+		return authTokens, err
+	}
+
 	_, err := s.userRepo.GetUserByLogin(ctx, login)
 	if err == nil {
 		return authTokens, ErrLoginExists
@@ -75,6 +96,17 @@ func (s *AuthService) Register(ctx context.Context, login string, password strin
 
 func (s *AuthService) Login(ctx context.Context, login string, password string) (AuthTokens, error) {
 	authTokens := AuthTokens{}
+
+	login = strings.TrimSpace(login)
+	if len(login) == 0 || len(login) > MaxLoginLength {
+		return authTokens, ErrInvalidCredentials
+	}
+
+	password = strings.TrimSpace(password)
+	if len(password) == 0 || len(password) > MaxPasswordLength {
+		return authTokens, ErrInvalidCredentials
+	}
+
 	user, err := s.userRepo.GetUserByLogin(ctx, login)
 	if err != nil {
 		if errors.Is(err, domain.ErrUserNotFound) {
@@ -180,4 +212,87 @@ func (s *AuthService) VerifyRefreshToken(tokenString string) (int, string, error
 	}
 
 	return userID, claims.Login, nil
+}
+
+func validateLogin(login string) error {
+	login = strings.TrimSpace(login)
+
+	if len(login) < MinLoginLength {
+		return ErrLoginTooShort
+	}
+
+	if len(login) > MaxLoginLength {
+		return ErrLoginTooLong
+	}
+
+	// Проверка на допустимые символы
+	if !loginRegex.MatchString(login) {
+		return ErrLoginInvalidChars
+	}
+
+	// Проверка, что логин не начинается с цифры
+	if len(login) > 0 && unicode.IsDigit(rune(login[0])) {
+		return ErrLoginStartsWithNumber
+	}
+
+	return nil
+}
+
+// validatePassword проверяет пароль на соответствие требованиям
+func validatePassword(password string) error {
+	password = strings.TrimSpace(password)
+
+	if len(password) < MinPasswordLength {
+		return ErrPasswordTooShort
+	}
+
+	if len(password) > MaxPasswordLength {
+		return ErrPasswordTooLong
+	}
+
+	// Проверка на пробелы
+	if strings.Contains(password, " ") {
+		return ErrPasswordContainsSpaces
+	}
+
+	var (
+		hasUpper   = false
+		hasLower   = false
+		hasDigit   = false
+		hasSpecial = false
+	)
+
+	// Специальные символы
+	specialChars := "!@#$%^&*()-_=+{}[]|;:,.<>?"
+
+	for _, char := range password {
+		switch {
+		case unicode.IsUpper(char):
+			hasUpper = true
+		case unicode.IsLower(char):
+			hasLower = true
+		case unicode.IsDigit(char):
+			hasDigit = true
+		case strings.ContainsRune(specialChars, char):
+			hasSpecial = true
+		}
+	}
+
+	if !hasUpper {
+		return ErrPasswordNoUpperCase
+	}
+
+	if !hasLower {
+		return ErrPasswordNoLowerCase
+	}
+
+	if !hasDigit {
+		return ErrPasswordNoDigit
+	}
+
+	if !hasSpecial {
+		return ErrPasswordNoSpecialChar
+	}
+
+	return nil
 }
