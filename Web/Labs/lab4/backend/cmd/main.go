@@ -48,6 +48,10 @@ func run(cfg config.Config, log *slog.Logger) error {
 	mux.HandleFunc("POST /auth/login", handler.LoginHandler)
 	mux.HandleFunc("POST /auth/register", handler.RegisterHandler)
 	mux.HandleFunc("POST /auth/refresh", handler.RefreshHandler)
+	mux.HandleFunc("POST /auth/logout", handler.LogoutHandler)
+
+	mux.Handle("GET /points", handler.AuthMiddleware(http.HandlerFunc(handler.GetPointsHandler)))
+	mux.Handle("POST /points/add", handler.AuthMiddleware(http.HandlerFunc(handler.AddPointHandler)))
 
 	server := http.Server{
 		Addr:    cfg.Address,
