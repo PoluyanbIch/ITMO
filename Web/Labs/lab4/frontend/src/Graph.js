@@ -22,31 +22,26 @@ export default function Graph({ R, points, onAddPoint, currentX, currentY }) {
     ctx.clearRect(0, 0, w, h);
     ctx.lineWidth = 1;
 
-    // ==== FIGURE ====
     if (localR) {
       ctx.fillStyle = "rgba(255,105,97,0.5)";
       ctx.strokeStyle = "#ff6961";
 
-      // Центр холста
       const centerX = w / 2;
       const centerY = h / 2;
 
-      // 1 четверть (верхняя правая): треугольник
       ctx.beginPath();
-      ctx.moveTo(centerX, centerY); // центр
-      ctx.lineTo(centerX + localR/2, centerY); // вправо на r/2
-      ctx.lineTo(centerX, centerY - localR/2); // вверх на r/2
+      ctx.moveTo(centerX, centerY);
+      ctx.lineTo(centerX + localR/2, centerY);
+      ctx.lineTo(centerX, centerY - localR/2);
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
 
-      // 2 четверть (верхняя левая): прямоугольник
       ctx.beginPath();
       ctx.rect(centerX - localR, centerY - localR/2, localR, localR/2);
       ctx.fill();
       ctx.stroke();
 
-      // 3 четверть (нижняя левая): сектор
       ctx.beginPath();
       ctx.moveTo(centerX, centerY);
       ctx.arc(centerX, centerY, localR, Math.PI * 0.5, Math.PI);
@@ -55,14 +50,12 @@ export default function Graph({ R, points, onAddPoint, currentX, currentY }) {
       ctx.stroke();
     }
 
-    // ==== AXIS ====
     ctx.strokeStyle = "#bbbbbb";
     ctx.beginPath();
     ctx.moveTo(0, h/2); ctx.lineTo(w, h/2);
     ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h);
     ctx.stroke();
 
-    // ==== DRAW HISTORY ====
     if (points && R && localR) {
       points.forEach(p => {
         const pR = Number(p.r);
@@ -80,26 +73,11 @@ export default function Graph({ R, points, onAddPoint, currentX, currentY }) {
       });
     }
 
-    // ==== CURRENT POINT ====
-    if (currentX != null && currentY != null && R && localR) {
-      const x = w/2 + (localR / R) * currentX;
-      const y = h/2 - (localR / R) * currentY;
-
-      ctx.strokeStyle = "green";
-      ctx.lineWidth = 3;
-      const s = 12;
-
-      ctx.beginPath();
-      ctx.moveTo(x - s/2, y); ctx.lineTo(x + s/2, y);
-      ctx.moveTo(x, y - s/2); ctx.lineTo(x, y + s/2);
-      ctx.stroke();
-    }
   };
 
   useEffect(draw, [R, points, currentX, currentY]);
   useEffect(() => window.addEventListener("resize", draw), []);
 
-  // ==== HANDLE CLICK ====
   const onClick = (e) => {
     if (!R) return alert("Сначала выберите R");
     const canvas = canvasRef.current;
@@ -116,7 +94,6 @@ export default function Graph({ R, points, onAddPoint, currentX, currentY }) {
     onAddPoint(Number(x.toFixed(2)), Number(y.toFixed(2)), R);
   };
 
-  // ==== TOOLTIP ====
   const onMove = (e) => {
     if (!R) return;
 

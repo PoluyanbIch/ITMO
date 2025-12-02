@@ -1,76 +1,15 @@
 import React, { useEffect, useState, useCallback, createContext, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Graph from "./Graph";
+import "./App.css";
 
-// --- Simple CSS to satisfy exact breakpoints (mobile <800, tablet 800-1209, desktop >=1209) ---
-const style = `
-:root { --gap: 16px; }
-* { box-sizing: border-box; }
-body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; }
-.app { padding: 20px; }
-.header { display:flex; justify-content:space-between; align-items:center; padding: 12px 0; }
-.brand { font-weight:600; }
-.auth-box { max-width:420px; margin: 20px auto; padding:20px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
-.input { width:100%; padding:8px 10px; margin-top:8px; margin-bottom:12px; border-radius:6px; border:1px solid #d1d5db; }
-.btn { padding:8px 12px; border-radius:8px; background:#2563eb; color:white; border:none; cursor:pointer; }
-.btn.ghost { background:transparent; color:#374151; border:1px solid #e5e7eb; }
-.container { display:grid; gap:var(--gap); }
 
-/* layout based on breakpoints */
-.page { max-width:1200px; margin: 0 auto; }
-
-/* mobile: single column */
-@media (max-width:799px) {
-  .layout { grid-template-columns: 1fr; }
-  .left { order:2 }
-  .right { order:1 }
-}
-
-/* tablet: two columns (1fr 360px) */
-@media (min-width:800px) and (max-width:1208px) {
-  .layout { grid-template-columns: 1fr 360px; }
-}
-
-/* desktop: two columns (1fr 420px) */
-@media (min-width:1209px) {
-  .layout { grid-template-columns: 1fr 420px; }
-}
-
-.card { background:white; padding:16px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.04); }
-.table { width:100%; border-collapse:collapse; }
-.table th, .table td { padding:8px 6px; border-bottom:1px solid #eef2f7; text-align:left; }
-.canvas-wrap { width:100%; aspect-ratio: 1 / 1; height:360px; display:flex; align-items:center; max-width: 600px; justify-content:center; }
-.canvas { width:100%; max-width:640px; height:100%; background:linear-gradient(180deg,#fbfdff,#f7fbff); border-radius:8px; border:1px solid #e6eef8; }
-.top-right { display:flex; gap:12px; align-items:center; }
-.small-muted { color:#6b7280; font-size:13px; }
-.error { color: #dc2626; }
-@media (max-width:799px) {
-  .canvas-wrap {
-    max-width: 400px;
-  }
-}
-
-@media (min-width:800px) and (max-width:1208px) {
-  .canvas-wrap {
-    max-width: 500px;
-  }
-}
-
-@media (min-width:1209px) {
-  .canvas-wrap {
-    max-width: 520px;
-  }
-}
-`;
-
-// --- Auth context ---
 const AuthContext = createContext(null);
 
 function useAuth() {
   return useContext(AuthContext);
 }
 
-// simple JWT decode (no validation) to extract payload (for display only)
 function decodeJwtPayload(token) {
   try {
     const parts = token.split('.');
@@ -81,7 +20,6 @@ function decodeJwtPayload(token) {
   } catch (e) { return null; }
 }
 
-// --- API helper using access token in memory and credentials included for refresh cookie ---
 function createApi(getToken, setToken) {
   const API = {};
   API.request = async (path, opts = {}) => {
@@ -89,20 +27,17 @@ function createApi(getToken, setToken) {
     const token = getToken();
     if (token) headers['Authorization'] = `Bearer ${token}`;
     const res = await fetch(`${process.env.REACT_APP_API_URL}`+path, {
-      credentials: 'include', // important for refresh-cookie
+      credentials: 'include',
       headers: { 'Content-Type': 'application/json', ...headers },
       ...opts,
     });
 
-    // auto-refresh on 401
     if (res.status === 401) {
-      // attempt refresh
       const refreshed = await fetch(`${process.env.REACT_APP_API_URL}/auth/refresh`, { method: 'POST', credentials: 'include' });
       if (refreshed.ok) {
         const data = await refreshed.json();
         if (data.access_token) {
           setToken(data.access_token);
-          // retry original
           const retryHeaders = { ...headers, Authorization: `Bearer ${data.access_token}` };
           const retry = await fetch(`${process.env.REACT_APP_API_URL}`+path, { credentials: 'include', headers: { 'Content-Type': 'application/json', ...retryHeaders }, ...opts });
           return retry;
@@ -118,7 +53,6 @@ function createApi(getToken, setToken) {
   return API;
 }
 
-// --- App ---
 export default function App() {
   const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -126,7 +60,6 @@ export default function App() {
   const api = createApi(() => token, setToken);
 
   useEffect(() => {
-    // silent refresh on app load
     (async () => {
       try {
         const res = await fetch(`${process.env.REACT_APP_API_URL}/auth/refresh`, { method: 'POST', credentials: 'include' });
@@ -135,7 +68,6 @@ export default function App() {
           if (data.access_token) setToken(data.access_token);
         }
       } catch (e) {
-        // ignore
       } finally {
         setLoading(false);
       }
@@ -153,7 +85,6 @@ export default function App() {
 
   return (
     <AuthContext.Provider value={value}>
-      <style>{style}</style>
       <Router>
         <div className="app page">
           <div className="header">
@@ -175,7 +106,7 @@ export default function App() {
   );
 }
 
-// --- AuthPage (login/register) ---
+// AuthPage
 function AuthPage() {
   const { setToken, api } = useAuth();
   const [mode, setMode] = useState('login');
@@ -201,7 +132,6 @@ function AuthPage() {
         return;
       }
       const data = await res.json();
-      // server returns access_token in JSON
       const access = data.access_token || data.token || data.accessToken || data.token;
       if (!access) {
         setError('no access token from server');
@@ -232,7 +162,7 @@ function AuthPage() {
   );
 }
 
-// --- PointsPage ---
+// PointsPage
 function PointsPage() {
   const { token, api } = useAuth();
   const [points, setPoints] = useState([]);
@@ -254,7 +184,6 @@ function PointsPage() {
   const submitPoint = async (e) => {
     e && e.preventDefault();
     setError('');
-    // validation
     if (xChoice === null) { setError('Выберите X'); return; }
     const y = parseFloat(yVal.replace(',', '.'));
     if (isNaN(y) || y < -5 || y > 3) { setError('Y должен быть числом от -5 до 3'); return; }
@@ -269,15 +198,12 @@ function PointsPage() {
   };
 
   const canvasClick = async (ev) => {
-    // compute coordinates relative to center based on bounding box
     const el = ev.currentTarget;
     const rect = el.getBoundingClientRect();
     const sx = ev.clientX - rect.left;
     const sy = ev.clientY - rect.top;
-    // map to logical coord system: x from -5..5, y -5..5
     const lx = (sx / rect.width) * 10 - 5;
-    const ly = -((sy / rect.height) * 10 - 5); // invert Y
-    // use current R (if not selected pick 1)
+    const ly = -((sy / rect.height) * 10 - 5);
     const r = rChoice ?? 1;
     const res = await api.post('/points/add', { x: String(lx.toFixed(2)), y: String(ly.toFixed(2)), r: String(r) });
     if (res.ok) fetchPoints();
