@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, createContext, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Graph from "./Graph";
+import Clock from "./Clock";
 import "./App.css";
 
 
@@ -146,6 +147,7 @@ function AuthPage() {
 
   return (
     <div className="auth-box card">
+      <Clock updateInterval={10000}/>
       <h2>{mode === 'login' ? 'Вход' : 'Регистрация'}</h2>
       <form onSubmit={submit}>
         <label>Логин</label>
